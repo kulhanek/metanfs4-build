@@ -1,0 +1,8 @@
+# local directory | repository | test
+# thirdparty code
+src/thirdparty/boost/1.59.0 boost
+# main code
+src/projects/hipoly/1.0 hipoly
+src/projects/prmfile/1.0 prmfile
+# final code
+src/projects/metanfs4/2.0 metanfs4
