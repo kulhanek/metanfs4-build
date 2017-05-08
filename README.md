@@ -1,7 +1,7 @@
 # metanfs4-build
 Utilities for testing and buliding of the [MetaNF4](https://github.com/kulhanek/metanfs4) package. The package is employed for mounting NFS4 storages of MetaCentrum National Grid and CESNET on clusters of NCBR and CEITEC, Masaryk University.
 
-## MetaNFS4 main features:
+## Main MetaNFS4 Features:
 * deamon creating local accounts for proper visualization of NFS4 file/directory owners and groups and providing feadback to own nfsidmapper and nsswitch
 * nfsidmapper interacting with the daemon
 * nsswitch interacting with the daemon
