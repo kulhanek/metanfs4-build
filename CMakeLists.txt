@@ -50,14 +50,14 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
 
 # C options
 SET(CMAKE_C_FLAGS_RELEASE "-O2 -fPIC")
-SET(CMAKE_C_FLAGS_DEBUG "-g -fPIC -Wall -Werror -pedantic-errors -Wundef -Wno-long-long")
+SET(CMAKE_C_FLAGS_DEBUG "-g -fPIC ")
 
 # C++ options
 SET(CMAKE_CXX_FLAGS_RELEASE "-O2 -fPIC")
-SET(CMAKE_CXX_FLAGS_DEBUG "-g -fPIC -Wall -Werror -pedantic-errors -Wundef -Wno-long-long")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g -fPIC ")
 
-SET(CMAKE_BUILD_TYPE Release)
-#SET(CMAKE_BUILD_TYPE Debug)
+#SET(CMAKE_BUILD_TYPE Release)
+SET(CMAKE_BUILD_TYPE Debug)
 
 # ==============================================================================
 # project subdirectories  ------------------------------------------------------
