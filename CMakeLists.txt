@@ -68,3 +68,10 @@ ADD_SUBDIRECTORY(src/projects/hipoly/1.0)
 ADD_SUBDIRECTORY(src/projects/prmfile/1.0)
 ADD_SUBDIRECTORY(src/projects/metanfs4/2.0)
 
+# ==============================================================================
+# inter-project dependencies  --------------------------------------------------
+# ==============================================================================
+
+ADD_DEPENDENCIES(cprmfile_shared hipoly_shared)
+ADD_DEPENDENCIES(metanfs4d cprmfile_shared hipoly_shared)
+

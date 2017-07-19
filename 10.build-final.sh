@@ -2,6 +2,13 @@
 
 PREFIX=/opt/metanfs4/2.0
 
+# ------------------------------------------------------------------------------
+
+if [ "`hostname -f`" != "softrepo.ncbr.muni.cz" ]; then
+    echo "unsupported build machine - it must be softrepo.ncbr.muni.cz!"
+    exit 1
+fi
+
 # add cmake from modules if they exist
 if type module &> /dev/null; then
     module add cmake
@@ -20,11 +27,14 @@ fi
 
 echo ""
 echo ">>> Number of CPUs for building: $N"
+echo ""
 
 # ------------------------------------------------------------------------------
 
+set -o pipefail
+
 cmake -DCMAKE_INSTALL_PREFIX="$PREFIX" . 2>&1 | tee configure.log || exit 1
-make 2>&1 | tee make.log || exit 1
+make -j "$N" 2>&1 | tee make.log || exit 1
 make install 2>&1 | tee install.log || exit 1
 
 # make symbolic links - tested for Ubuntu 16.04
