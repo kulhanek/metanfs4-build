@@ -9,6 +9,11 @@ if [ "`hostname -f`" != "softrepo.ncbr.muni.cz" ]; then
     exit 1
 fi
 
+if [ "`id -n -u`" != "root" ]; then
+    echo "must be run by root!"
+    exit 1
+fi
+
 # add cmake from modules if they exist
 if type module &> /dev/null; then
     module add cmake
@@ -32,6 +37,8 @@ echo ""
 # ------------------------------------------------------------------------------
 
 set -o pipefail
+
+umask 022
 
 cmake -DCMAKE_INSTALL_PREFIX="$PREFIX" . 2>&1 | tee configure.log || exit 1
 make -j "$N" 2>&1 | tee make.log || exit 1
